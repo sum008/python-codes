@@ -1,6 +1,5 @@
 import time
 from datetime import datetime as dt
-from test.test_decimal import file
 
 host_temp = "hosts"
 host_path = "C:\\Windows\\System32\\drivers\\etc\\hosts"
@@ -9,7 +8,7 @@ website_list = ["www.facebook.com","facebook.com","www.gmail.com","gmail.com"]
 time_from = "10:00:00"
 time_to = "19:00:00"
 
-print( 10>1)
+
 while True:
     
     cur_time = dt.now()
