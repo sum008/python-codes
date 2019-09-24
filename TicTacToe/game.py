@@ -1,6 +1,6 @@
-# 7=00  #8=01  #9=02
-# 4=10  #5=02  #6=02
-# 1=20  #2=21  #3=22
+print("# 7=00  #8=01  #9=02")
+print("# 4=10  #5=11  #6=12")
+print("# 1=20  #2=21  #3=22")
 
 player1 = input ( "Enter player1 name : " )
 player2 = input ( "Enter player2 name : " )
@@ -117,7 +117,7 @@ def print_the_matrix(mat) :
 
 def check_for_x_0(a , b , mat , move , name) :
     count = 0
-    c=a
+    c=a #a=position row
     # left
     for j in range ( b - 1 , -1 , -1 ) :
         if j >= 0 and mat [ a ] [ j ] == move :
@@ -126,8 +126,7 @@ def check_for_x_0(a , b , mat , move , name) :
         else :
             if count > 0 :
                 count = count - 1
-            else :
-                count = 0
+            
             break
     # rigth
     if count <= 1 :
@@ -138,8 +137,7 @@ def check_for_x_0(a , b , mat , move , name) :
             else :
                 if count > 0 :
                     count = count - 1
-                else :
-                    count = 0
+                
                 break
 
     # up
@@ -151,8 +149,6 @@ def check_for_x_0(a , b , mat , move , name) :
             else :
                 if count > 0 :
                     count = count - 1
-                else :
-                    count = 0
                 break
 
     # down
@@ -160,12 +156,10 @@ def check_for_x_0(a , b , mat , move , name) :
         for i in range ( a + 1 , row ) :
             if i <= row - 1 and mat [ i ] [ b ] == move :
                 count = count + 1
-
+                print("down")
             else :
                 if count > 0 :
                     count = count - 1
-                else :
-                    count = 0
                 break
 
     # diagonal up left
@@ -174,12 +168,10 @@ def check_for_x_0(a , b , mat , move , name) :
             c = c - 1
             if c >= 0 and j >= 0 and mat [ c ] [ j ] == move :
                 count = count + 1
-
+                print("up left")
             else :
                 if count > 0 :
                     count = count - 1
-                else :
-                    count = 0
                 break
     c=a
     # diagonal down right
@@ -191,8 +183,6 @@ def check_for_x_0(a , b , mat , move , name) :
             else :
                 if count > 0 :
                     count = count - 1
-                else :
-                    count = 0
                 break
     c=a
     # diagonal up right
@@ -205,8 +195,6 @@ def check_for_x_0(a , b , mat , move , name) :
             else :
                 if count > 0 :
                     count = count - 1
-                else :
-                    count = 0
                 break
     c=a
     # diagonal down left
@@ -219,8 +207,6 @@ def check_for_x_0(a , b , mat , move , name) :
             else :
                 if count > 0 :
                     count = count - 1
-                else :
-                    count = 0
                 break
 
     if count == 2 :
