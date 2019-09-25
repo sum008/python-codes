@@ -5,8 +5,6 @@ host_temp = "hosts"
 host_path = "C:\\Windows\\System32\\drivers\\etc\\hosts"
 ip = "127.0.0.1"
 website_list = ["www.facebook.com","facebook.com","www.gmail.com","gmail.com"]
-time_from = "10:00:00"
-time_to = "19:00:00"
 
 
 while True:
