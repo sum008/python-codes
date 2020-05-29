@@ -23,7 +23,7 @@ while True:
                     file.write(ip+"   "+website)
     else:
         with open(host_path,"r+") as file:
-            content = file.readlines()
+            content = file.readlines() #Returns file in form of list. Each line will be one element of the list.
             file.seek(0)  
             for line in content:
                 if not any (website in line for website in website_list):
