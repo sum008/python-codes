@@ -23,8 +23,8 @@ while True:
                     file.write(ip+"   "+website)
     else:
         with open(host_path,"r+") as file:
-            content = file.readlines() #puts pointer at the last line of file so the new line could be entered from there and not at the starting of file
-            file.seek(0)  #puts pointer at the starting of file
+            content = file.readlines() f file
+            file.seek(0)  
             for line in content:
                 if not any (website in line for website in website_list):
                     file.write(line)
