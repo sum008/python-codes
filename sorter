@@ -1,0 +1,29 @@
+import os
+import shutil
+
+folder_list=['softwares','Music','Video','text_files','pictures','spread_sheets','presentations','zips','torrent']
+
+folders={'softwares':('.exe','.apk','.msi'),'Audio':('.mp3','.wav','.wave','.wma','.wmv'),'Video':('.mp4','.avi','.flv','wmv','mov','mkv')
+,'text_files':('.txt','.pdf','.doc','.docx','odt','.rtf'),'spread_sheets':('.ods','.xls','.xlsm','.xlsx')
+,'presentations':('.ppt','.pptx','.pps','odp'),'pictures':('.ai','.bmp','.gif','.ico','.jpeg','.jpg','.png','.ps','.svg','.tif','.tiff')
+,'zips':('.7z','.zip','.arj','.deb','.pkg','.rar','.rpm','.tar.gz','.z'),'torrent':('.torrent')}
+
+directory='Desktop'
+
+for folder in folder_list:
+    if not os.path.exists(directory+"\\"+folder):
+        os.mkdir(directory+"\\"+folder)
+
+file_list=os.listdir(directory)
+print(file_list)
+for file in file_list:
+    # none=True
+    for folder in folders:
+        if file.lower().endswith(folders[folder]):
+            print(file,folder)
+            shutil.move(directory+'\\'+file , directory+'\\'+folder)
+            # none=False
+            break
+print("Done")
+    # if none:
+    #     shutil.move(directory+'\\'+file,directory+'\\Others')
